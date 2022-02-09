@@ -1,4 +1,4 @@
-package onUpdate
+package RunBot
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"goWeatherTG/pkg/weatherRequest"
 )
 
-func OnUpdate(botToken string) {
+func Run(botToken string) {
 	bot := initBot.InitBot(botToken)
 
 	u := tgbotapi.NewUpdate(0)
