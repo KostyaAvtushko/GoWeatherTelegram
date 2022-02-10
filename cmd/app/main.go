@@ -3,7 +3,7 @@ package main
 import "goWeatherTG/pkg/RunBot"
 
 const (
-	BOT_TOKEN = "<my_token>"
+	BOT_TOKEN = "<bot_token>"
 )
 
 func main() {

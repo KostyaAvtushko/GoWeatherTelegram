@@ -19,7 +19,7 @@ type Weather struct {
 	Status            string
 }
 
-func GetWeatherCity(city string) Weather {
+func GetWeatherCity(city string) *Weather {
 
 	resp, err := http.Get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=de45be9a3632b0b8dbdfcea3fe09004b")
 	defer resp.Body.Close()
@@ -45,7 +45,7 @@ func GetWeatherCity(city string) Weather {
 			log.Panic(err)
 		}
 		fmt.Println(tempJsonC, flTempJsonC, windSpeedJson, weatherStatusJson, descWeatherStatusJson)
-		return Weather{
+		return &Weather{
 			tempJsonC,
 			flTempJsonC,
 			weatherStatusJson,
@@ -54,5 +54,5 @@ func GetWeatherCity(city string) Weather {
 			"ok",
 		}
 	}
-	return Weather{0, 0, "", "", 0, "No city found"}
+	return &Weather{0, 0, "", "", 0, "No city found"}
 }
